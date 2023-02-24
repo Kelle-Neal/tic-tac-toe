@@ -11,8 +11,6 @@ gameName.textContent = "Tic-Tac-Toe";
   console.log(gameName.textContent);
 main.appendChild(gameName);
 
-
-
 //infoText - append to main
 let infoText = document.createElement('row');
 infoText.setAttribute('class', "row", "callout-info", "text-center");
@@ -28,107 +26,110 @@ main.appendChild(gameBoard);
 //first row of buttons
 let row1 = document.createElement('btn-group');
 row1.setAttribute('role', "group");
+row1.setAttribute('class', "row");
 gameBoard.appendChild(row1);
 
-//first tile in row 1
-let tile0 = document.createElement('button');
-tile0.setAttribute('class', "btn-outline", "col-2");
-tile0.setAttribute('type', "button");
-tile0.textContent = "\uF584";
-row1.appendChild(tile0);
+  //first tile in row 1
+  let tile0 = document.createElement('button');
+  tile0.style.height = '50px';
+  tile0.style.width = '50px';
+  row1.appendChild(tile0);
 
-//second tile in row 1
-let tile1 = document.createElement('button');
-tile1.setAttribute('class', "btn-outline", "col-2");
-tile1.setAttribute('type', "button");
-tile1.innerHTML = "O";
-row1.appendChild(tile1);
+  //second tile in row 1
+  let tile1 = document.createElement('button');
+  tile1.style.height = '50px';
+  tile1.style.width= '50px';
+  row1.appendChild(tile1);
 
-//third tile in row 1
-let tile2 = document.createElement('button');
-tile2.setAttribute('class', "btn-outline", "col-2");
-tile2.setAttribute('type', "button");
-tile2.innerHTML = "O";
-row1.appendChild(tile2);
-
-let p1 = document.getElementById('p1');
-let p2 = document.getElementById('p2');
-
-let blankImg = document.getElementById('img');
-blankImg.setAttribute('src', "img/Square_-_black_simple.svg.png");
+  //third tile in row 1
+  let tile2 = document.createElement('button');
+  tile2.style.height = '50px';
+  tile2.style.width= '50px';
+  row1.appendChild(tile2);
 
 
-let p1_symbol = "\uF659";
-let p2_symbol = "\uF28A";
+//second row of buttons
+let row2 = document.createElement('btn-group');
+row2.setAttribute('class', "row");
+row2.setAttribute('role', "group");
+gameBoard.appendChild(row2);
+
+  //first tile in row 2
+  let tile3 = document.createElement('button');
+  tile3.style.height = '50px';
+  tile3.style.width= '50px';
+  row2.appendChild(tile3);
+ 
+  //second tile in row 2
+  let tile4 = document.createElement('button');
+  tile4.style.height = '50px';
+  tile4.style.width= '50px';
+  row2.appendChild(tile4);
+
+  //third tile in row 2
+  let tile5 = document.createElement('button');
+  tile5.style.height = '50px';
+  tile5.style.width= '50px';
+  row2.appendChild(tile5);
+
+  //third row of buttons
+let row3 = document.createElement('btn-group');
+row3.setAttribute('class', "row");
+row3.setAttribute('role', "group");
+gameBoard.appendChild(row3);
+
+  //first tile in row 3
+  let tile6 = document.createElement('button');
+  tile6.style.height = '50px';
+  tile6.style.width= '50px';
+  row3.appendChild(tile6);
+ 
+  //second tile in row 3
+  let tile7 = document.createElement('button');
+  tile7.style.height = '50px';
+  tile7.style.width= '50px';
+  row3.appendChild(tile7);
+
+  //third tile in row 3
+  let tile8 = document.createElement('button');
+  tile8.style.height = '50px';
+  tile8.style.width= '50px';
+  row3.appendChild(tile8);
+
+let p1 = document.createElement('p1');
+let p2 = document.createElement('p2');
+
+let p1_symbol = '\uF659';
+let p2_symbol = '\uF28A';
+
 let currentPlayer = "p1";
+  console.log(currentPlayer);
 
-let tiles = document.getElementsByTagName('button');
-for(let i = 0; i < tiles.length; i++) {
-  tiles[i].addEventListener('click', function() {
-    if (currentPlayer === p1) {
-      document.getElementById(tiles).innerHTML = "p1_symbol";
-      tiles.disabled = true;
+// //this lets me click on tile0 and get an X
+// let tiles= document.getElementsByTagName('button');
+// for (let i = 0; i < tiles.length; i++) {
+//   tiles[i].addEventListener('click', (myMove));
+// }
+//   function myMove() {  
+//   document.getElementsByTagName("button")[0].innerHTML = "X";
+// }
+
+//this works but doesn't retain the X & O's
+let tiles= document.getElementsByTagName('button');
+for (let i = 0; i < tiles.length; i++) {
+  tiles[i].addEventListener("click", function() {
+    if (currentPlayer == "p1") {
+      document.getElementsByTagName("button")[i].innerHTML = "X";
+      document.getElementsByTagName("button")[i].disabled = true;
     }  
-    else if (currentPlayer === p2) {
-      document.getElementById(tiles).innerHTML = "p2_symbol";
-      tiles.disabled = true;
+    else if (currentPlayer == "p2") {
+      (document.getElementsByTagName("button")[i].innerHTML = "O");
+    }  
+    else {
+      (document.getElementsByTagName("button")[i].innerHTML = " ");
     }
-    else {document.getElementById(tiles).innerHTML = "blankImg";
-    }
-  });
+});
 }
-
-  
-
-
-
-
-
-
-// tile0.classList.add(btn);
-// tile0.classList.add(btn-outline-info);
-// tile0.setAttribute('type', 'button');
-
-
-// let tile1 = document.createElement('tile1');
-// tile1.setAttribute("type", "button");
-// btnGroup1.appendChild(tile1);
-
-// let tile2 = document.createElement('tile2');
-// tile2.setAttribute("type", "button");
-// btnGroup1.appendChild(tile2);
-
-// let btnGroup2 = document.createElement('btnGroup2');
-// gameBoard.appendChild(btnGroup2);
-
-// let tile3 = document.createElement('tile3');
-// tile3.setAttribute("type", "button");
-// btnGroup2.appendChild(tile3);
-
-// let tile4 = document.createElement('tile4');
-// tile4.setAttribute("type", "button");
-// btnGroup2.appendChild(tile4);
-
-// let tile5 = document.createElement('tile5');
-// tile5.setAttribute("type", "button");
-// btnGroup2.appendChild(tile5);
-
-// let btnGroup3 = document.createElement('btnGroup3');
-// gameBoard.appendChild(btnGroup3);
-
-// let tile6 = document.createElement('tile6');
-// tile6.setAttribute("type", "button");
-// btnGroup3.appendChild(tile6);
-
-// let tile7 = document.createElement('tile7');
-// tile7.setAttribute("type", "button");
-// btnGroup3.appendChild(tile7);
-
-// let tile8 = document.createElement('tile8');
-// tile8.setAttribute("type", "button");
-// btnGroup3.appendChild(tile8);
-
-
 
 
 // let p1_moves = new Array();
@@ -171,6 +172,7 @@ for(let i = 0; i < tiles.length; i++) {
 
 
 
-function init() {
-  console.log("i got here");
-}
+// function init() {
+//   console.log("i got here");
+// }
+
