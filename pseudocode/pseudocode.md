@@ -25,8 +25,7 @@
 - **filtered_symbols** - new array with p1_symbol filtered out. 
   - *let filtered_symbols = symbols.filter(function(value, index, arr){return value != p1_symbol}*
 - **p2_symbol** - selected from the filtered_symbols array that doesn’t contain the p1_symbol
-- **p1_moves** - array to hold player one’s moves
-- **p2_moves** - array to hold payer two’s moves
+
 - **play_button** - button to load empty game
 - **p1_moves** - array to hold which tiles player one clicked
 - **p2_moves** - array to hold which tiles player two clicked
