@@ -226,6 +226,7 @@ for (let i = 0; i < tiles.length; i++) {
 
 function resetGame() {
   document.getElementsByTagName('button').innerHTML = " ";
+  document.getElementsByTagName('button').disabled = true;
   infoText.textContent = "Let's play again!";
 }
 
